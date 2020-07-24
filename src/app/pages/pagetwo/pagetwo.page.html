@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>McLaren</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <img src="../../../assets/cars/mclaren.jpg">
+      <p style="font-style: oblique;text-align: center;">McLaren MCL45</p>
+      <ion-card-title>
+        {{data.teamName}}
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>Race Starts: {{data.raceStarts}}</ion-item>
+      <ion-item>Race Wins: {{data.totalF1Wins}}</ion-item>
+      <ion-item>Podiums: {{data.totalPodiums}}</ion-item>
+      <ion-item>Drivers Championship: {{data.totalWDC}}</ion-item>
+      <ion-item>Constructors Championship: {{data.totalWCC}}</ion-item>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

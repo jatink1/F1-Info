@@ -1,3 +1,30 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <ion-menu-toggle auto-hide="false">
+          <ion-list>
+            <ion-item button (click)="teams()">Teams</ion-item>
+            <ion-item button (click)="drivers()">Drivers</ion-item>
+            <ion-item button (click)="circuits()">Circuits</ion-item>
+            <ion-item button (click)="standings()">Standings</ion-item>
+            <ion-item button (click)="about()">About</ion-item>
+          </ion-list>
+        </ion-menu-toggle>
+      </ion-content>
+    </ion-menu>
+
+
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+
+
+  
 </ion-app>
