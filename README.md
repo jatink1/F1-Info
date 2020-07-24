@@ -12,3 +12,6 @@ This is for learning ionic 4 and implementing some basic concepts
           ionic serve
     6. To build an apk and run it in mobile:
           ionic cordova build android
+
+
+#### The response from server in some pages might take longer than expected as the API used is external and not built by me.
