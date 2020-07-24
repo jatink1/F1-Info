@@ -1,5 +1,7 @@
 # Ionic4App
 
+This is for learning ionic 4 and implementing some basic concepts
+
 ### To build and run this app:
     1. Install node version >=10
     2. Install ionic 4 by running following command:
