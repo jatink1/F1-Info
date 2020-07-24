@@ -13,11 +13,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'page-one',
+    path: 'page-one', //route for navigating to pageOne
     loadChildren: () => import('./pages/page-one/page-one.module').then(m => m.PageOnePageModule)
   },
   {
-    path: 'page-one/:id',
+    path: 'page-one/:id', //route for navigating to pageOne by id and resolving data using dataResolver
     resolve: {
       service:DataResolverService
     },

@@ -14,9 +14,9 @@ export class PageOnePage implements OnInit {
 
   ngOnInit() {
     if (this.activateRoute.snapshot.data['service']) {
-      this.data = this.activateRoute.snapshot.data['service'];
+      this.data = this.activateRoute.snapshot.data['service'];  //recieving data from DataService
     }
-    console.log("DATA", this.data);
+    //console.log("DATA", this.data);
   }
 
 }

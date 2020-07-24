@@ -9,6 +9,8 @@ import { DataProviderService } from 'src/app/providers/data-provider.service';
 })
 export class HomePage {
 
+  //objects to be sent to page one,two and three
+  
   pageOneData = {
     teamName: 'Ferrari',
     raceStarts:993,
@@ -38,17 +40,19 @@ export class HomePage {
 
   constructor(private router:Router, private dataService: DataProviderService) {}
 
+  //sending data to page one using dataService and then navigating to page one
   toPageOne() {
-    this.dataService.setData('ferrari', this.pageOneData);
+    this.dataService.setData('ferrari', this.pageOneData); //dataService
+    this.router.navigateByUrl('/page-one/ferrari'); //navigating to page one
+  };
 
-    this.router.navigateByUrl('/page-one/ferrari')
-  }
-
+  //sending data to page two using dataService and then navigating to page two
   toPageTwo() {
-    this.dataService.setData('mclaren', this.pageTwoData);
-    this.router.navigate(['pagetwo/mclaren']);
+    this.dataService.setData('mclaren', this.pageTwoData); //dataService to send data
+    this.router.navigate(['pagetwo/mclaren']);    //navigating to page two
   }
 
+  //sending data to page three using dataService and then navigating to page three
   toPageThree() {
     this.dataService.setData('williams', this.pageThreeData);
     this.router.navigate(['page-three/williams']);
