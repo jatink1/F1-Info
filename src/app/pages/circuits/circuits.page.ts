@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-circuits',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CircuitsPage implements OnInit {
 
-  constructor() { }
+  public circuits: any;
+  
+  constructor(private http:HttpClient, private loadingCtrl:LoadingController) { }
 
   ngOnInit() {
+    this.http.get('http://ergast.com/api/f1/circuits.json?limit=75').subscribe(res => {
+      this.circuits = res['MRData']['CircuitTable']['Circuits'];
+    })
   }
 
 }

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button ></ion-back-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
 
     <ion-title>Drivers</ion-title>
@@ -11,9 +11,17 @@
 <ion-content>
 
   <ion-list>
-    <ion-item *ngFor="let name of names;let i = index">
-     {{i+1}}. {{name.givenName}} {{name.familyName}}
-    </ion-item>
+    <ion-card *ngFor="let name of names;let i = index">
+      <ion-card-header>
+        <ion-card-title>
+          {{i+1}}. {{name.givenName}} {{name.familyName}}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{name.nationality}}
+        <p><a href="{{name.url}}">Details</a></p>
+      </ion-card-content>
+    </ion-card>
   </ion-list>
 
 </ion-content>

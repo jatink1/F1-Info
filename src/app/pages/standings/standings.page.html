@@ -8,5 +8,22 @@
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-card *ngFor="let stan of stans;let i = index;">
+      <ion-card-header>
+        <ion-card-title>
+          {{i+1.}}. {{stan.Constructor.name}}
+        </ion-card-title>
+        
+        <ion-card-subtitle>
+          Wins: {{stan.wins}}  &nbsp;  Points: {{stan.points}}
+        </ion-card-subtitle>
+      </ion-card-header>
 
+      <ion-card-content>
+        Nationality: {{stan.Constructor.nationality}}
+        <p><a href="{{stan.Constructor.url}}">Details</a></p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>

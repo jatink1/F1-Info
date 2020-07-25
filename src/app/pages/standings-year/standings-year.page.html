@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Standings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card (click)="viewStandings(2020,3)">
+      <ion-card-content>
+        2020
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="viewStandings(2019,21)">
+      <ion-card-content>
+        2019
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="viewStandings(2018,21)">
+      <ion-card-content>
+        2018
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="viewStandings(2017,20)">
+      <ion-card-content>
+        2017
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="viewStandings(2016,21)">
+      <ion-card-content>
+        2016
+      </ion-card-content>
+    </ion-card>
+
+
+  </ion-list>
+</ion-content>

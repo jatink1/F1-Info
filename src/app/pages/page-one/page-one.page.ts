@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PageOnePage implements OnInit {
 
-  private data = [];
+  public data = [];
 
   constructor(private activateRoute:ActivatedRoute) { }
 

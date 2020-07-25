@@ -62,8 +62,19 @@ const routes: Routes = [
     loadChildren: () => import('./pages/standings/standings.module').then( m => m.StandingsPageModule)
   },
   {
+    path: 'standings/:id',
+    resolve: {
+      service: DataResolverService
+    },
+    loadChildren: () => import('./pages/standings/standings.module').then(m => m.StandingsPageModule)
+  },
+  {
     path: 'about',
     loadChildren: () => import('./pages/abouts/abouts.module').then( m => m.AboutsPageModule)
+  },
+  {
+    path: 'standings-year',
+    loadChildren: () => import('./pages/standings-year/standings-year.module').then( m => m.StandingsYearPageModule)
   },
 ];
 

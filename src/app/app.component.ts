@@ -45,7 +45,7 @@ export class AppComponent {
   }
 
   standings() {
-    this.route.navigate(['/standings']);
+    this.route.navigate(['/standings-year']);
   }
 
   about() {

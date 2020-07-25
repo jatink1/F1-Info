@@ -8,5 +8,21 @@
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-card *ngFor="let circuit of circuits; let i = index">
+      <ion-card-header >
+        <ion-card-title >
+          {{i+1}}. {{circuit.circuitName}}
+        </ion-card-title>        
+      </ion-card-header>
+
+      <ion-card-content>
+        {{circuit.Location.locality}}, {{circuit.Location.country}}
+        <p><a target="_blank" rel="noopener noreferrer" href="{{circuit.url}}">Details</a></p>
+      </ion-card-content>
+      
+    </ion-card>
+    
+  </ion-list>
 
 </ion-content>
