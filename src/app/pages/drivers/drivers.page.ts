@@ -9,7 +9,10 @@ import { LoadingController } from '@ionic/angular';
 })
 export class DriversPage implements OnInit {
 
-  public names:any;
+  public names: any;
+  public driverName: string;
+  public searchStatus: Boolean;
+  public list: any;
 
   constructor(private http:HttpClient, private loadingCtrl:LoadingController) { }
 
@@ -27,8 +30,23 @@ export class DriversPage implements OnInit {
       })
     })
 
-    
+    this.searchStatus = false;
+  }
 
+  getDriver(name) {
+    if (name != "") {
+      this.http.get('http://ergast.com/api/f1/drivers/' + name + '.json?limit=850').subscribe(res => {
+        this.list = res['MRData']['DriverTable']['Drivers'][0];
+        this.searchStatus = true;
+        //console.log("Driver is: ", list[0].familyName);
+        if (this.list == undefined || this.list == "") {
+          this.searchStatus = false;
+        }
+      })
+    } else {
+      
+      
+    }
   }
 
 }

@@ -1,5 +1,7 @@
 {
   "name": "v4MenuAndRoutingTest",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -10,6 +10,27 @@
 
 <ion-content>
 
+<ion-searchbar showCancelButton="always" [(ngModel)]="driverName" (ionChange)="getDriver(driverName)"></ion-searchbar>
+
+<ion-card *ngIf="searchStatus==true">
+  <ion-card-header>
+    <ion-card-title>
+      {{list.givenName}} {{list.familyName}}
+    </ion-card-title>
+
+    <ion-card-subtitle>
+      DOB: {{list.dateOfBirth}}
+      
+    </ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    Driver Number: {{list.permanentNumber}}
+    <p>Nationality: {{list.nationality}}</p>
+    <p><a href="{{list.url}}" target="_blank">Details</a></p>
+  </ion-card-content>
+</ion-card>
+
   <ion-list>
     <ion-card *ngFor="let name of names;let i = index">
       <ion-card-header>
@@ -19,7 +40,7 @@
       </ion-card-header>
       <ion-card-content>
         {{name.nationality}}
-        <p><a href="{{name.url}}">Details</a></p>
+        <p><a href="{{name.url}}" target="_blank">Details</a></p>
       </ion-card-content>
     </ion-card>
   </ion-list>
