@@ -15,3 +15,5 @@ This is for learning ionic 4 and implementing some basic concepts
 
 
 #### The response from server in some pages might take longer than expected as the API used is external and not built by me.
+     
+ API used is [Ergast Developer API](https://ergast.com/mrd/)
