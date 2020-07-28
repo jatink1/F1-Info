@@ -9,10 +9,36 @@
 
 <ion-content>
 
-  <ion-list>
-    <ion-item *ngFor="let team of teams; let i = index">
-      {{i+1}}. {{team.name}}
-    </ion-item>
-  </ion-list>
+  <ion-searchbar [(ngModel)]="teamSearch" showCancelButton="true" (ionChange)="searchTeam(teamSearch)"></ion-searchbar>
+  <ion-card *ngIf="searchList == true && list">
+    <ion-card-header>
+      <ion-card-title>
+        {{list.name}}
+      </ion-card-title>
+      <ion-card-subtitle>
+        Nationality: {{list.nationality}}
+      </ion-card-subtitle>
+    </ion-card-header>
 
+    <ion-card-content>
+      <a href="{{list.url}}" target="_blank">Details</a>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let team of teams; let i = index">
+
+    <ion-card-header>
+      <ion-card-title>
+        {{i+1}}. {{team.name}}
+      </ion-card-title>
+      <ion-card-subtitle>
+        Nationality: {{team.nationality}}
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <a href="{{team.url}}" target="_blank">Details</a>
+    </ion-card-content>
+
+  </ion-card>
 </ion-content>

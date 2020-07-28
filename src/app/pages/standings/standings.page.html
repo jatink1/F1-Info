@@ -8,22 +8,44 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  
+  <div >
     <ion-card *ngFor="let stan of stans;let i = index;">
       <ion-card-header>
         <ion-card-title>
           {{i+1.}}. {{stan.Constructor.name}}
         </ion-card-title>
-        
-        <ion-card-subtitle>
-          Wins: {{stan.wins}}  &nbsp;  Points: {{stan.points}}
-        </ion-card-subtitle>
+    
+        <h4>
+          Wins: {{stan.wins}} &nbsp; Points: {{stan.points}}
+        </h4>
       </ion-card-header>
-
+    
       <ion-card-content>
         Nationality: {{stan.Constructor.nationality}}
         <p><a href="{{stan.Constructor.url}}">Details</a></p>
       </ion-card-content>
     </ion-card>
-  </ion-list>
+  </div>
+    
+
+<div >
+  <ion-card *ngFor="let stat of stats;let i = index;">
+    <ion-card-header>
+      <ion-card-title>
+        {{i+1.}}. {{stat.Driver.givenName}} {{stat.Driver.familyName}}
+      </ion-card-title>
+  
+      <h4>
+        Wins: {{stat.wins}} &nbsp; Points: {{stat.points}}
+      </h4>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Nationality: {{stat.Driver.nationality}}
+      <p><a href="{{stat.Driver.url}}">Details</a></p>
+    </ion-card-content>
+  </ion-card>
+</div>
+
 </ion-content>

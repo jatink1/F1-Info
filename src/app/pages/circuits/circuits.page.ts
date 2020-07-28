@@ -14,10 +14,18 @@ export class CircuitsPage implements OnInit {
   
   constructor(private http:HttpClient, private loadingCtrl:LoadingController) { }
 
-  ngOnInit() {
-    this.http.get('http://ergast.com/api/f1/circuits.json?limit=75').subscribe(res => {
-      this.circuits = res['MRData']['CircuitTable']['Circuits'];
+  async ngOnInit() {
+    let loading = await this.loadingCtrl.create({
+      message: "Please wait ...",
+      duration: 1111
     })
+
+    loading.present().then(() => {
+      this.http.get('http://ergast.com/api/f1/circuits.json?limit=75').subscribe(res => {
+        this.circuits = res['MRData']['CircuitTable']['Circuits'];
+      })
+    })
+    
   }
 
 }
