@@ -1,6 +1,6 @@
-# Ionic4App
+# F1 Insights
 
-This is for learning ionic 4 and implementing some basic concepts
+This is an attempt to build an app which has info about F1 cars/seasons/drivers etc while learning Ionic 4
 
 ### To build and run this app:
     1. Install node version >=10
